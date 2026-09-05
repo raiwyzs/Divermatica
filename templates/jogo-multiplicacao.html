@@ -3,79 +3,80 @@
 {% block title %}Chuva de Contas - Divermatica{% endblock %}
 
 {% block content %}
+
 <link rel="stylesheet" href="{{ url_for('static', filename='css/jogo-multiplicacao.css') }}">
 
-<div id="tela-inicial">
-  <div class="circle circle-bottom-left"></div>
-  <div class="circle circle-right"></div>
-  <div class="circle circle-bottom"></div>
-
-  <img class="favo favo-top" src="{{ url_for('static', filename='images/icons/favo_de_cima.png') }}" alt="Favo de Cima">
-
-  <img class="favo favo-bottom" src="{{ url_for('static', filename='images/icons/favo_de_baixo.png') }}" alt="Favo de Baixo">
-
-  <img class="decor nuvem-topo" src="{{ url_for('static', filename='images/images-jogomultiplicacao/nuvemazul.png') }}" alt="Nuvem Azul">
-  <img class="decor num4-direita" src="{{ url_for('static', filename='images/images-jogomultiplicacao/num4.png') }}" alt="4">
-  <img class="decor numtres-esquerda" src="{{ url_for('static', filename='images/images-jogomultiplicacao/numtres.png') }}" alt="3">
-  <img class="decor num2-amarelo-bottom" src="{{ url_for('static', filename='images/images-jogomultiplicacao/num2amarelo.png') }}" alt="2 Amarelo">
-
-  <img src="{{ url_for('static', filename='images/images-jogomultiplicacao/mascote_chuva.png') }}" class="mascote-chuva">
-  <div class="menu">
-    <h1 style="font-family:cursive;">Chuva de Contas</h1>
-    
-    <p style="font-family: cursive;"><b>Como jogar:</b></p>
-    <p style="font-family: cursive;">Resolva as multiplicações</p>
-    <p style="font-family: cursive;">Digite a resposta e pressione ENTER</p>
-    <p style="font-family: cursive;">Acerte para ganhar pontos</p>
-    <p style="font-family: cursive;">Você tem 5 vidas</p>
-    
-    <button onclick="iniciarJogo()">▶ Começar</button>
-  </div>
-</div>
-
-<div id="decoracoes-jogo">
-  <div class="circle circle-bottom-left"></div>
-  <div class="circle circle-right"></div>
-  <div class="circle circle-bottom"></div>
-
-  <img class="favo favo-top" src="{{ url_for('static', filename='images/icons/favo_de_cima.png') }}" alt="Favo de cima">
-  <img class="favo favo-bottom" src="{{ url_for('static', filename='images/icons/favo_de_baixo.png') }}" alt="Favo de baixo">
-  <img class="decor nuvem-topo" src="{{ url_for('static', filename='images/images-jogomultiplicacao/nuvemazul.png') }}" alt="Nuvem Azul">
-  <img class="decor num4-direita" src="{{ url_for('static', filename='images/images-jogomultiplicacao/num4.png') }}" alt="4">
-  <img class="decor numtres-esquerda" src="{{ url_for('static', filename='images/images-jogomultiplicacao/numtres.png') }}" alt="3">
-  <img class="decor num2-amarelo-bottom" src="{{ url_for('static', filename='images/images-jogomultiplicacao/num2amarelo.png') }}" alt="2 Amarelo">
-  <img src="{{ url_for('static', filename='images/images-jogomultiplicacao/mascote_chuva.png') }}" class="mascote-chuva">
-</div>
-
 <div class="container" id="container">
-  <h1 style="font-family: cursive;">Chuva de Contas</h1>
 
-  <div class="hud" style="font-family: cursive;">
-    <span>⭐ Pontos: <b id="pontos">0</b></span>
-    <span>❤️ Vidas: <b id="vidas">5</b></span>
-    <button onclick="sairJogo()" style="margin-left: auto; background: #f44336; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;">⬅ Sair</button>
-  </div>
+    <h1>Chuva de Contas</h1>
 
-  <div id="jogo"></div>
+    <div class="hud">
+        <span>Pontos: <b id="pontos">0</b></span>
 
-  <div class="input-area">
-    <input type="number" id="resposta" placeholder="Digite a resposta">
-    <button onclick="verificar()">Responder</button>
-  </div>
+        <span>Vidas: <b id="vidas">5</b></span>
+
+        <button onclick="sairJogo()" class="btn-sair">
+            ⬅ Sair
+        </button>
+    </div>
+
+    <div id="jogo"></div>
+
+    <div class="input-area">
+
+        <input
+            type="number"
+            id="resposta"
+            placeholder="Digite a resposta"
+            autocomplete="off"
+        >
+
+        <button onclick="verificar()">
+            Responder
+        </button>
+
+    </div>
+
 </div>
+
+
+<!-- GAME OVER -->
 
 <div id="game-over">
-  <div class="game-over-box">
-    <h2 style="color: red;">Game Over!</h2>
-    <p>Sua pontuação: <b id="pontuacao-final">0</b></p>
-    <button onclick="reiniciarJogo()">Jogar novamente</button>
-    <button onclick="window.location.href='/jogos'">Voltar para página de jogos</button>
-  </div>
+
+    <div class="game-over-box">
+
+        <h2>Game Over!</h2>
+
+        <p>
+            Sua pontuação:
+            <b id="pontuacao-final">0</b>
+        </p>
+
+        <button onclick="reiniciarJogo()">
+            Jogar novamente
+        </button>
+
+        <button onclick="window.location.href='/jogos'">
+            Voltar para página de jogos
+        </button>
+
+    </div>
+
 </div>
 
+
 <div class="voltar-container">
-    <a href="{{ url_for('jogos_index') }}" class="back-link">← Voltar</a>
+
+    <a
+        href="{{ url_for('jogos_index') }}"
+        class="back-link"
+    >
+        ← Voltar
+    </a>
+
 </div>
+
 
 <script src="{{ url_for('static', filename='js/dificuldade-por-ano.js') }}"></script>
 <script src="{{ url_for('static', filename='js/jogo-multiplicacao.js') }}"></script>
