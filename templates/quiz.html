@@ -6,28 +6,91 @@
 
 <link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
 
-<div class="bubble bubble1"></div>
-<div class="bubble bubble2"></div>
-<div class="bubble bubble3"></div>
-
-
 <div class="quiz-page">
-    <h2>Escolha seu Quiz</h2>
-    
-    <div class="buttons-container">
-        <a style="text-decoration: none;" href="{{url_for('quiz_contas')}}">
-            <button class="quiz-btn contas">
-                Quiz de Contas
-            </button>
-        </a>
 
-        <a style="text-decoration: none;" href="{{url_for('quiz_contexto')}}">
-            <button class="quiz-btn contexto">
-                Quiz Contextualizado
-            </button>
-        </a>
+    <!-- Fundo da página -->
+    <img
+        src="{{ url_for('static', filename='images/fundo_quiz.png') }}"
+        class="quiz-background"
+        alt=""
+    >
+
+    <div class="quiz-content">
+
+        <!-- Título -->
+        <div class="quiz-title">
+            <h1>
+                Escolha seu <span>Quiz!</span>
+            </h1>
+        </div>
+
+        <!-- Área principal -->
+        <div class="quiz-main">
+
+            <!-- Mascote -->
+            <div class="quiz-mascot-area">
+                <img
+                    src="{{ url_for('static', filename='images/mascote_quiz.png') }}"
+                    alt="Mascote da Divermática"
+                    class="quiz-mascot"
+                >
+            </div>
+
+            <!-- Card Branco Principal -->
+            <div class="quiz-card">
+
+                <!-- Quiz de Contas -->
+                <a
+                    href="{{ url_for('quiz_contas') }}"
+                    class="quiz-option contas"
+                >
+                    <!-- Padrão sutil de fundo estilo inspiração -->
+                    <div class="option-watermark math-watermark" aria-hidden="true">
+                        <span>2 +</span>
+                        <span>5 = 3</span>
+                    </div>
+
+                    <div class="quiz-option-text">
+                        <h2>Quiz de Contas</h2>
+                        <p>Resolva desafios matemáticos divertidos!</p>
+                    </div>
+
+                    <div class="quiz-arrow" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </div>
+                </a>
+
+                <!-- Quiz Contextualizado -->
+                <a
+                    href="{{ url_for('quiz_contexto') }}"
+                    class="quiz-option contexto"
+                >
+                    <!-- Padrão sutil de fundo estilo inspiração -->
+                    <div class="option-watermark context-watermark" aria-hidden="true">
+                        <span>🛒</span>
+                        <span>🚌</span>
+                    </div>
+
+                    <div class="quiz-option-text">
+                        <h2>Quiz Contextualizado</h2>
+                        <p>Use a matemática em situações do dia a dia!</p>
+                    </div>
+
+                    <div class="quiz-arrow" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </div>
+                </a>
+
+            </div>
+
+        </div>
+
     </div>
-    
+
 </div>
 
 {% endblock %}

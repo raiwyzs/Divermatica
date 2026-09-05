@@ -1,371 +1,356 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800;900&display=swap');
 
 /* =========================================================
-   PÁGINA DE ESCOLHA DOS QUIZZES
-   Somente estética - não altera a lógica
-   ========================================================= */
-
-* {
-    box-sizing: border-box;
-}
-
-html,
-body {
-    min-height: 100%;
-}
-
-body {
+   PÁGINA & FUNDO 100%
+========================================================= */
+html, body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
-
-    background:
-        radial-gradient(circle at 10% 18%,
-            rgba(255, 255, 255, 0.20) 0 135px,
-            transparent 136px),
-
-        radial-gradient(circle at 91% 35%,
-            rgba(255, 255, 255, 0.18) 0 55px,
-            transparent 56px),
-
-        radial-gradient(circle at 82% 78%,
-            rgba(255, 255, 255, 0.14) 0 95px,
-            transparent 96px),
-
-        linear-gradient(
-            145deg,
-            #4fd5ed 0%,
-            #24c5e4 45%,
-            #00afd0 100%
-        );
-
-    min-height: 100vh;
+    padding: 0;
+    width: 100%;
+    height: 100%;
 }
-
-
-/* =========================================================
-   ELEMENTOS DECORATIVOS
-   ========================================================= */
-
-.bubble {
-    position: fixed;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 0;
-
-    background: rgba(255, 255, 255, 0.13);
-    border: 2px solid rgba(255, 255, 255, 0.10);
-}
-
-.bubble1 {
-    width: 310px;
-    height: 310px;
-
-    top: 25px;
-    left: -110px;
-}
-
-.bubble2 {
-    width: 125px;
-    height: 125px;
-
-    right: 110px;
-    bottom: 80px;
-}
-
-.bubble3 {
-    width: 72px;
-    height: 72px;
-
-    right: 70px;
-    top: 235px;
-}
-
-
-/* =========================================================
-   PÁGINA
-   ========================================================= */
 
 .quiz-page {
     position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Baloo 2', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    isolation: isolate;
+}
+
+/* Fundo fixo cobrindo absolutamente toda a tela */
+.quiz-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center bottom;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.nav-area {
+    position: relative !important;
+    z-index: 1000 !important;
+}
+
+/* =========================================================
+   CONTEÚDO PRINCIPAL
+========================================================= */
+.quiz-content {
+    position: relative;
     z-index: 2;
-
-    width: min(94%, 1050px);
-    min-height: calc(100vh - 20px);
-
-    margin: 0 auto;
-    padding: 70px 20px 60px;
-
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px 20px 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
-
 
 /* =========================================================
    TÍTULO
-   ========================================================= */
+========================================================= */
+.quiz-title {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+}
 
-.quiz-page h2 {
-    margin: 35px 0 45px;
-
+.quiz-title h1 {
+    margin: 0;
     color: #ffffff;
-
-    font-family: 'Poppins', sans-serif;
-    font-size: clamp(38px, 5vw, 62px);
+    font-size: clamp(42px, 4.8vw, 65px);
+    line-height: 1;
     font-weight: 900;
-
-    line-height: 1.1;
     text-align: center;
-
     letter-spacing: 0.5px;
-
     text-shadow:
-        0 4px 0 rgba(0, 116, 148, 0.35),
-        0 7px 15px rgba(0, 70, 90, 0.18);
+        0 4px 0 #005696,
+        0 7px 12px rgba(0, 0, 0, 0.22);
 }
 
-
-/* pequeno detalhe decorativo abaixo do título */
-
-.quiz-page h2::after {
-    content: "";
-    display: block;
-
-    width: 85px;
-    height: 7px;
-
-    margin: 16px auto 0;
-
-    border-radius: 50px;
-
-    background: #ffd447;
+.quiz-title h1 span {
+    color: #ffd21c;
+    text-shadow:
+        0 4px 0 #c28800,
+        0 7px 12px rgba(0, 0, 0, 0.22);
 }
-
 
 /* =========================================================
-   CARD CENTRAL
-   ========================================================= */
-
-.buttons-container {
+   ÁREA DO CARD & MASCOTE
+========================================================= */
+.quiz-main {
     position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o card com o título */
+}
 
-    width: min(100%, 540px);
+/* Abelha posicionada ao lado sem empurrar o card do centro */
+.quiz-mascot-area {
+    position: absolute;
+    right: calc(50% + 220px); /* Ancora a abelha na lateral esquerda do card */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 380px;
+    pointer-events: none;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    padding: 42px 48px;
+.quiz-mascot {
+    display: block;
+    width: 100%;
+    max-width: 410px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.25));
+}
 
+/* =========================================================
+   CARD BRANCO (CENTRALIZADO)
+========================================================= */
+.quiz-card {
+    position: relative;
+    width: min(600px, 85vw);
+    padding: 24px 28px;
+    background: #ffffff;
+    border-radius: 36px;
+    box-shadow:
+        0 18px 36px rgba(0, 55, 100, 0.16),
+        0 4px 10px rgba(0, 0, 0, 0.04);
     display: flex;
     flex-direction: column;
-    align-items: center;
-
-    background: rgba(255, 255, 255, 0.97);
-
-    border: 5px solid rgba(255, 255, 255, 0.35);
-    border-radius: 30px;
-
-    box-shadow:
-        0 18px 0 rgba(0, 121, 153, 0.15),
-        0 25px 45px rgba(0, 78, 105, 0.22);
+    gap: 16px;
+    z-index: 3;
 }
-
-
-/* detalhe amarelo no topo do card */
-
-.buttons-container::before {
-    content: "";
-    position: absolute;
-
-    top: -5px;
-    left: 50%;
-
-    width: 100px;
-    height: 10px;
-
-    transform: translateX(-50%);
-
-    border-radius: 0 0 20px 20px;
-
-    background: #ffd447;
-}
-
 
 /* =========================================================
-   LINKS
-   ========================================================= */
-
-.buttons-container a {
-    width: 100%;
-    text-decoration: none;
-}
-
-
-/* =========================================================
-   BOTÕES
-   ========================================================= */
-
-.quiz-btn {
+   BOTÕES / OPÇÕES
+========================================================= */
+.quiz-option {
     position: relative;
-
     width: 100%;
-    min-height: 78px;
-
-    margin: 12px 0;
-    padding: 16px 25px;
-
-    border: none;
-    border-radius: 18px;
-
-    color: #ffffff;
-
-    font-family: 'Poppins', sans-serif;
-    font-size: 20px;
-    font-weight: 800;
-
+    min-height: 98px;
+    padding: 14px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    border-radius: 22px;
+    overflow: hidden;
     cursor: pointer;
+    box-sizing: border-box;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
 
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        filter 0.2s ease;
-
+/* Quiz de Contas (Azul) */
+.quiz-option.contas {
+    background: linear-gradient(180deg, #0ba2f8 0%, #008be3 100%);
     box-shadow:
-        0 7px 0 rgba(0, 0, 0, 0.12),
-        0 10px 18px rgba(0, 0, 0, 0.10);
+        0 6px 0 #006eb4,
+        0 10px 18px rgba(0, 110, 180, 0.25);
 }
 
-
-/* botão contas */
-
-.quiz-btn.contas {
-    background: linear-gradient(
-        135deg,
-        #4aa8f5 0%,
-        #338fe5 100%
-    );
-
+/* Quiz Contextualizado (Rosa) */
+.quiz-option.contexto {
+    background: linear-gradient(180deg, #ff4c8a 0%, #f1286f 100%);
     box-shadow:
-        0 7px 0 #2476c5,
-        0 12px 20px rgba(45, 137, 218, 0.25);
+        0 6px 0 #be1752,
+        0 10px 18px rgba(220, 24, 94, 0.25);
 }
 
+/* Hover & Clique */
+.quiz-option:hover {
+    transform: translateY(-3px);
+}
 
-/* botão contextualizado */
-
-.quiz-btn.contexto {
-    background: linear-gradient(
-        135deg,
-        #ff819f 0%,
-        #f5658a 100%
-    );
-
+.quiz-option.contas:hover {
     box-shadow:
-        0 7px 0 #d94e72,
-        0 12px 20px rgba(245, 101, 138, 0.25);
+        0 9px 0 #006eb4,
+        0 14px 24px rgba(0, 110, 180, 0.32);
 }
 
-
-/* símbolo decorativo */
-
-.quiz-btn::after {
-    content: "›";
-
-    position: absolute;
-    right: 22px;
-
-    font-size: 30px;
-    font-weight: 900;
-
-    opacity: 0.8;
-
-    transition: transform 0.2s ease;
-}
-
-
-/* hover */
-
-.quiz-btn:hover {
-    transform: translateY(-4px);
-
-    filter: brightness(1.04);
-
+.quiz-option.contexto:hover {
     box-shadow:
-        0 10px 0 rgba(0, 0, 0, 0.12),
-        0 17px 25px rgba(0, 0, 0, 0.16);
+        0 9px 0 #be1752,
+        0 14px 24px rgba(220, 24, 94, 0.32);
 }
 
-.quiz-btn:hover::after {
-    transform: translateX(5px);
-}
-
-
-/* clique */
-
-.quiz-btn:active {
+.quiz-option:active {
     transform: translateY(3px);
-
-    box-shadow:
-        0 4px 0 rgba(0, 0, 0, 0.12),
-        0 7px 12px rgba(0, 0, 0, 0.10);
 }
 
+.quiz-option.contas:active {
+    box-shadow:
+        0 3px 0 #006eb4,
+        0 6px 10px rgba(0, 110, 180, 0.2);
+}
+
+.quiz-option.contexto:active {
+    box-shadow:
+        0 3px 0 #be1752,
+        0 6px 10px rgba(220, 24, 94, 0.2);
+}
+
+/* =========================================================
+   DETALHES INTERNOS DOS BOTÕES
+========================================================= */
+.option-watermark {
+    position: absolute;
+    right: 75px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    user-select: none;
+    opacity: 0.14;
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    line-height: 1.1;
+}
+
+.math-watermark {
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.context-watermark {
+    font-size: 24px;
+    filter: grayscale(1) brightness(2);
+}
+
+.quiz-option-text {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 8px;
+}
+
+.quiz-option-text h2 {
+    margin: 0 0 2px;
+    color: #ffffff;
+    font-size: clamp(20px, 1.8vw, 26px);
+    font-weight: 900;
+    line-height: 1.1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+}
+
+.quiz-option-text p {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(13px, 1.05vw, 15px);
+    font-weight: 700;
+    line-height: 1.2;
+    opacity: 0.95;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+}
+
+.quiz-arrow {
+    position: relative;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    margin-left: 12px;
+}
+
+.quiz-arrow svg {
+    width: 22px;
+    height: 22px;
+}
+
+.quiz-option.contas .quiz-arrow svg {
+    stroke: #0ba2f8;
+}
+
+.quiz-option.contexto .quiz-arrow svg {
+    stroke: #f1286f;
+}
 
 /* =========================================================
    RESPONSIVIDADE
-   ========================================================= */
-
-@media (max-width: 768px) {
-
-    .quiz-page {
-        padding-top: 45px;
-    }
-
-    .quiz-page h2 {
-        font-size: 42px;
-        margin-bottom: 35px;
-    }
-
-    .buttons-container {
-        padding: 35px 30px;
+========================================================= */
+@media (max-width: 1100px) {
+    .quiz-mascot-area {
+        width: 300px;
+        right: calc(50% + 190px);
     }
 }
 
-
-@media (max-width: 480px) {
-
-    .quiz-page {
-        width: 94%;
-        padding: 35px 10px;
+@media (max-width: 860px) {
+    .quiz-main {
+        flex-direction: column-reverse;
     }
 
-    .quiz-page h2 {
-        font-size: 34px;
-        margin: 25px 0 30px;
-    }
-
-    .buttons-container {
-        padding: 30px 20px;
-        border-radius: 24px;
-    }
-
-    .quiz-btn {
-        min-height: 68px;
-        font-size: 17px;
-        border-radius: 15px;
-    }
-
-    .bubble1 {
+    .quiz-mascot-area {
+        position: static;
+        transform: none;
         width: 220px;
-        height: 220px;
-        left: -100px;
+        margin-top: -20px;
     }
 
-    .bubble2 {
-        width: 90px;
-        height: 90px;
-        right: 20px;
+    .quiz-card {
+        width: 92vw;
+        border-radius: 28px;
+        padding: 20px 18px;
     }
 
-    .bubble3 {
+    .quiz-option {
+        min-height: 85px;
+        padding: 12px 16px;
+    }
+}
+
+@media (max-width: 520px) {
+    .quiz-title h1 {
+        font-size: 34px;
+    }
+
+    .quiz-option-text h2 {
+        font-size: 18px;
+    }
+
+    .quiz-option-text p {
+        font-size: 12px;
+    }
+
+    .quiz-arrow {
+        width: 34px;
+        height: 34px;
+        min-width: 34px;
+    }
+
+    .quiz-arrow svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .option-watermark {
         display: none;
     }
 }
