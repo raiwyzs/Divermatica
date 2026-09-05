@@ -1,44 +1,67 @@
 /* ===== JOGO DA MEMÓRIA - DIVERMÁTICA ===== */
 body {
-    margin: 0;
     width: 100%;
-}
-
-/* Cabeçalho do Jogo */
-.jogo-header {
-    text-align: center;
-    padding: 15px 20px 5px 20px;
-}
-
-h1 {
-    font-size: clamp(34px, 5vw, 54px);
-    font-weight: 800;
-    letter-spacing: 1px;
-    color: #ffffff;
-    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.15);
-    margin: 0 0 5px 0;
-    font-family: 'Baloo 2', 'Arial Rounded MT Bold', Arial, sans-serif;
-}
-
-p {
-    font-size: 1.3rem;
-    color: #ffffff;
-    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.15);
+    min-height: 100vh;
+    background: url('../images/images-jogomemoria/fundo_memoria.png') center center / cover no-repeat fixed;
     margin: 0;
-    font-family: 'Baloo 2', 'Arial Rounded MT Bold', Arial, sans-serif;
 }
 
-/* ===== CENTRALIZAÇÃO DO TABULEIRO ===== */
-.jogo-centralizador {
+main {
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 15px 0 15px 0;
+    padding: 20px 0 40px;
+    background: transparent;
+}
+
+.jogo-page {
+    position: relative;
+    width: min(95%, 1080px);
+    margin: 0 auto;
+    padding: 35px 20px 40px;
+    background: transparent;
+    border-radius: 36px;
+    box-shadow: none;
+}
+
+.jogo-area {
+    margin: 0 auto;
+    max-width: 760px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px 14px 18px;
+    border-radius: 26px;
+    box-shadow: 0 18px 35px rgba(78, 47, 132, 0.03);
+    width: min(66%, 500px);
+    text-align: center;
+    z-index: 2;
+}
+
+.titulo-jogo {
+    color: #ab25db;
+    font-size: clamp(1.65rem, 2.4vw, 2.15rem);
+    margin-bottom: 18px;
+    text-transform: capitalize;
+    letter-spacing: 0.04em;
+    text-shadow: 0 2px 12px rgba(180, 80, 242, 0.16);
+    font-family: 'Baloo 2', 'Arial Rounded MT Bold', Arial, sans-serif;
+}
+
+.subtitulo-jogo {
+    color: #71129d;
+    font-size: 1.15rem;
+    margin-bottom: 24px;
+    text-shadow: none;
+    font-family: 'Baloo 2', 'Arial Rounded MT Bold', Arial, sans-serif;
+}
+
+.circle,
+.favocima,
+.favobaixo {
+    display: none;
 }
 
 .wrapper {
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.78);
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
@@ -48,6 +71,7 @@ p {
     width: 500px;
     height: 500px;
     box-sizing: border-box;
+    margin: 0 auto;
 }
 
 /* Grelha de Cartas */
@@ -85,7 +109,7 @@ p {
     transform: scale(0.96);
 }
 
-/* Shake ao errar */
+
 .card.shake {
     animation: shake 0.35s ease-in-out;
 }
@@ -116,7 +140,6 @@ p {
     padding: 8px;
 }
 
-/* ===== LOGO DA DIVERMÁTICA (AUMENTADA) ===== */
 .card .front-view img {
     width: 90%;
     height: 90%;
@@ -125,7 +148,7 @@ p {
     object-fit: contain;
 }
 
-/* Formas Geométricas */
+
 .card .back-view img {
     width: 85%;
     height: 85%;
@@ -134,7 +157,6 @@ p {
     object-fit: contain;
 }
 
-/* Giro 3D */
 .card .back-view {
     transform: rotateY(-180deg);
 }
@@ -147,7 +169,7 @@ p {
     transform: rotateY(180deg);
 }
 
-/* ===== BOTÃO VOLTAR (ABAIXO DO TABULEIRO) ===== */
+/* ===== BOTÃO VOLTAR ===== */
 .voltar-container {
     display: flex;
     justify-content: center;
@@ -186,7 +208,7 @@ p {
     transform: scale(0.96);
 }
 
-/* ===== MODAL DE PARABÉNS (ECRÃ COMPLETO E CENTRALIZADO) ===== */
+/* ===== MODAL DE PARABÉNS ===== */
 .mensagem-parabens-overlay {
     position: fixed !important;
     top: 0 !important;
@@ -230,7 +252,6 @@ p {
     100% { transform: scale(1); opacity: 1; }
 }
 
-/* Mascote no modal */
 .mascote-parabens {
     width: 95px;
     height: auto;
@@ -277,56 +298,31 @@ p {
 
 /* ===== ELEMENTOS DECORATIVOS E MASCOTE ===== */
 .mascote_pensando {
+    display: none;
+}
+
+.mascote_abelha {
     position: absolute;
-    top: 380px;
-    right: 2px;
-    width: 320px;
-    height: auto;
-    z-index: 1;
-}
-
-.circle {
-    position: absolute;
-    background-color: #0d8ba8;
-    z-index: -1;
-}
-
-.circle-left {
-    width: 400px;
-    height: 400px;
-    top: -30px;
-    left: -200px;
-    border-radius: 50%;
-}
-
-.circle-right {
-    width: 400px;
-    height: 400px;
-    right: -250px;
-    top: 400px;
+    top: 50%;
+    right: -200px; 
     transform: translateY(-50%);
-    border-radius: 50%;
-}
-
-.favocima {
-    position: absolute;
-    top: 110px;
-    right: 100px;
-    width: 200px;
+    width: 600px;  
     height: auto;
-    z-index: -1;
-}
-
-.favobaixo {
-    position: absolute;
-    bottom: -45px;
-    left: -25px;
-    width: clamp(80px, 15vw, 200px);
-    height: auto;
-    z-index: 1;
+    z-index: 1;    
+    pointer-events: none;
+    display: block;
+    
 }
 
 /* ===== RESPONSIVIDADE ===== */
+@media (max-width: 1050px) {
+    /* Esconde ou diminui a abelha caso a tela não tenha espaço nas laterais */
+    .mascote_abelha {
+        opacity: 0.25; /* se sobrepor em telas intermediárias, fica bem sutil */
+        right: -20px;
+    }
+}
+
 @media (max-width: 900px) {
     .wrapper {
         width: 420px;
@@ -336,11 +332,8 @@ p {
     .cards {
         gap: 10px;
     }
-    .mascote_pensando {
-        width: 220px;
-        bottom: -60px;
-        top: auto;
-        right: 10px;
+    .mascote_abelha {
+        display: none;
     }
 }
 
