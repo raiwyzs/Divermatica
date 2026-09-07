@@ -1,28 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800;900&display=swap');
 
-/* =========================================================
-   PÁGINA & FUNDO 100%
-========================================================= */
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 .quiz-page {
     position: relative;
     width: 100%;
-    min-height: 100vh;
-    overflow-x: hidden;
+    height: 100vh;
+    overflow: hidden;
     font-family: 'Baloo 2', Arial, sans-serif;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     isolation: isolate;
 }
 
-/* Fundo fixo cobrindo absolutamente toda a tela */
 .quiz-background {
     position: fixed;
     top: 0;
@@ -40,19 +38,19 @@ html, body {
     z-index: 1000 !important;
 }
 
-/* =========================================================
-   CONTEÚDO PRINCIPAL
-========================================================= */
+
 .quiz-content {
     position: relative;
     z-index: 2;
     width: 100%;
     max-width: 1200px;
-    padding: 20px 20px 30px;
+    height: auto;
+    padding-top: 6vh; 
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 /* =========================================================
@@ -64,13 +62,13 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 .quiz-title h1 {
     margin: 0;
     color: #ffffff;
-    font-size: clamp(42px, 4.8vw, 65px);
+    font-size: clamp(38px, 4.4vw, 58px);
     line-height: 1;
     font-weight: 900;
     text-align: center;
@@ -88,45 +86,48 @@ html, body {
 }
 
 /* =========================================================
-   ÁREA DO CARD & MASCOTE
+   ÁREA PRINCIPAL
 ========================================================= */
 .quiz-main {
     position: relative;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center; /* Centraliza o card com o título */
+    justify-content: center;
 }
 
-/* Abelha posicionada ao lado sem empurrar o card do centro */
+/* =========================================================
+   ABELHA EM PÉ NA GRAMA
+========================================================= */
 .quiz-mascot-area {
-    position: absolute;
-    right: calc(50% + 220px); /* Ancora a abelha na lateral esquerda do card */
-    top: 50%;
-    transform: translateY(-50%);
-    width: 380px;
+    position: fixed;
+    bottom: 5vh;     
+    right: calc(50% + 250px); 
+    width: 400px;
     pointer-events: none;
-    z-index: 5;
+    z-index: 4;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .quiz-mascot {
     display: block;
     width: 100%;
-    max-width: 410px;
     height: auto;
+    max-height: 48vh;
+    transform: scale(1.5);
+    transform-origin: bottom center;
     object-fit: contain;
-    filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.25));
 }
 
 /* =========================================================
-   CARD BRANCO (CENTRALIZADO)
+   CARD BRANCO (NO ALTO)
 ========================================================= */
 .quiz-card {
     position: relative;
-    width: min(600px, 85vw);
+    width: min(600px, 86vw);
     padding: 24px 28px;
     background: #ffffff;
     border-radius: 36px;
@@ -137,6 +138,7 @@ html, body {
     flex-direction: column;
     gap: 16px;
     z-index: 3;
+    box-sizing: border-box;
 }
 
 /* =========================================================
@@ -145,7 +147,7 @@ html, body {
 .quiz-option {
     position: relative;
     width: 100%;
-    min-height: 98px;
+    min-height: 95px;
     padding: 14px 22px;
     display: flex;
     align-items: center;
@@ -248,7 +250,7 @@ html, body {
 .quiz-option-text h2 {
     margin: 0 0 2px;
     color: #ffffff;
-    font-size: clamp(20px, 1.8vw, 26px);
+    font-size: clamp(20px, 1.8vw, 25px);
     font-weight: 900;
     line-height: 1.1;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
@@ -295,29 +297,54 @@ html, body {
 /* =========================================================
    RESPONSIVIDADE
 ========================================================= */
-@media (max-width: 1100px) {
+@media (max-width: 1250px) {
     .quiz-mascot-area {
-        width: 300px;
-        right: calc(50% + 190px);
+        right: calc(50% + 300px);
+        width: 280px;
     }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 1000px) {
+    .quiz-mascot-area {
+        right: calc(50% + 270px);
+        width: 240px;
+    }
+}
+
+@media (max-width: 900px) {
+    html,
+    body {
+        overflow-y: auto;
+    }
+
+    .quiz-page {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+    }
+
+    .quiz-content {
+        padding-top: 30px;
+    }
+
     .quiz-main {
         flex-direction: column-reverse;
     }
 
     .quiz-mascot-area {
         position: static;
+        width: 230px;
+        margin-top: 15px;
+    }
+
+    .quiz-mascot {
         transform: none;
-        width: 220px;
-        margin-top: -20px;
     }
 
     .quiz-card {
         width: 92vw;
-        border-radius: 28px;
-        padding: 20px 18px;
+        border-radius: 30px;
+        padding: 22px 20px;
     }
 
     .quiz-option {
@@ -326,9 +353,15 @@ html, body {
     }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 550px) {
     .quiz-title h1 {
-        font-size: 34px;
+        font-size: 32px;
+    }
+
+    .quiz-card {
+        width: 95vw;
+        padding: 20px 16px;
+        border-radius: 25px;
     }
 
     .quiz-option-text h2 {

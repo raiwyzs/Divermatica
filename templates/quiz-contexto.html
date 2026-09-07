@@ -5,36 +5,66 @@
 {% block content %}
 
 <link rel="stylesheet" href="{{ url_for('static', filename='css/quiz-contexto.css') }}">
-<body>
-  <div class="imagens">
-            <div class="circle circle-left"></div>
-            <div class="circle circle-right"></div>
 
-            <img src="{{ url_for('static', filename='images/images-jogomemoria/mascote_pensando.png') }}" alt="Mascote" class="mascote_pensando">
-            <img src="{{ url_for('static', filename='images/icons/favo_de_baixo.png') }}" alt="Favo de Baixo" class="favo-de-baixo">
-            <img src="{{ url_for('static', filename='images/icons/favo_de_cima.png') }}" alt="Favo de Cima" class="favo-de-cima">
+<div class="quiz-page">
+
+    <img
+        src="{{ url_for('static', filename='images/fundo_quiz.png') }}"
+        class="quiz-background"
+        alt=""
+    >
+
+    <div class="quiz-content">
+
+        <div class="quiz-main">
+
+            <!-- Mascote Abelha Contextualizada -->
+            <div class="quiz-mascot-area">
+                <img
+                    src="{{ url_for('static', filename='images/mascote_quiz-contexto.png') }}"
+                    alt="Mascote Divermática Contextualizada"
+                    class="quiz-mascot"
+                >
+            </div>
+
+            <div class="container" id="quizTela">
+
+                <h2>Quiz Contextualizado</h2>
+
+                <form id="quizForm"></form>
+
+                <button type="button" id="proxima">
+                    Próxima
+                </button>
+
+            </div>
+
+            <div class="container" id="resultadoTela">
+
+                <h2 id="pontuacao"></h2>
+
+                <div id="erros" class="result-box"></div>
+
+                <div class="btn-group">
+
+                    <button type="button" class="novo">
+                        Novo Quiz
+                    </button>
+
+                    <button type="button" class="sair">
+                        Sair
+                    </button>
+
+                </div>
+
+            </div>
+
         </div>
 
-
-    <div class="container" id="quizTela">
-      <h2>Quiz Contextualizado</h2>
-      <form id="quizForm"></form>
-      <button id="proxima" onclick="proximaQuestao()">Próxima</button>
     </div>
 
-    <div class="container" id="resultadoTela">
-      <h2 id="pontuacao"></h2>
-
-      <div id="erros" class="result-box"></div>
-
-      <div class="btn-group">
-        <button class="novo" onclick="novoQuiz()">Novo Quiz</button>
-        <button class="sair" onclick="sair()">Sair</button>
-      </div>
-    </div>
+</div>
 
 <script src="{{ url_for('static', filename='js/quiz-contexto.js') }}"></script>
 
 {% endblock %}
-
-<!-- corrigido -->

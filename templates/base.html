@@ -8,42 +8,41 @@
 </head>
 <body>
 
+    <header class="nav-area">
+        <div class="nav-container">
 
-   <header class="nav-area">
-    <div class="nav-container">
-
-        <!-- LOGO -->
-        <a href="{{ url_for('jogos_index') }}" class="nav-logo">
-            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo Divermatica">
-        </a>
-
-        <!-- LINKS -->
-        <nav class="nav-menu">
-            <a class="nav-item active" href="{{ url_for('jogos_index') }}">
-                <img src="{{ url_for('static', filename='images/icons/estrela_jogos_icon.png') }}">
-                Jogos
+            <!-- LOGO -->
+            <a href="{{ url_for('jogos_index') }}" class="nav-logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo Divermatica">
             </a>
 
-            <a class="nav-item active" href="{{ url_for('sobre') }}">
-                <img src="{{ url_for('static', filename='images/icons/sobre_icon.png') }}">
-                Sobre
-            </a>
+            <!-- LINKS -->
+            <nav class="nav-menu">
+                <a class="nav-item active" href="{{ url_for('jogos_index') }}">
+                    <img src="{{ url_for('static', filename='images/icons/estrela_jogos_icon.png') }}" alt="">
+                    Jogos
+                </a>
 
-            <a class="nav-item active" href="{{ url_for('quiz') }}">
-                <img src="{{ url_for('static', filename='images/icons/quiz_icon.png') }}">
-                Quiz
-            </a>
+                <a class="nav-item active" href="{{ url_for('sobre') }}">
+                    <img src="{{ url_for('static', filename='images/icons/sobre_icon.png') }}" alt="">
+                    Sobre
+                </a>
 
-            <button type="button" class="nav-item nav-logout" id="sair-button">
-                <img src="{{ url_for('static', filename='images/icons/sair.png') }}">
-                Sair
-            </button>
+                <a class="nav-item active" href="{{ url_for('quiz') }}">
+                    <img src="{{ url_for('static', filename='images/icons/quiz_icon.png') }}" alt="">
+                    Quiz
+                </a>
 
-        </nav>
+                <a class="nav-item nav-logout" href="{{ url_for('index') }}" id="sair-button">
+                    <img src="{{ url_for('static', filename='images/icons/sair.png') }}" alt="Sair">
+                     Sair
+                </a>
+                
 
-    </div>
-</header>
+            </nav>
 
+        </div>
+    </header>
 
     <main>
         {% block content %}{% endblock %}

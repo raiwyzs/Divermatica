@@ -10,119 +10,135 @@ body {
     overflow: clip;
 }
 
-                    
-
 /* HEADER GERAL NÃO MEXER EM HIPOTESE ALGUMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA*/
-       main{
-        padding: 0;
-        margin: 0;
-       }
-        .header {
-            background: #ffffff;
-            border-bottom: 4px solid #ffd966;
-        }
+main {
+    padding: 0;
+    margin: 0;
+}
 
+.header {
+    background: #ffffff;
+    border-bottom: 4px solid #ffd966;
+}
 
-        /* LOGO */
-        .logo-area img {
-            height: 80px;
-            right: 30px;
-            position: relative;
-        }
+/* LOGO */
+.logo-area img {
+    height: 80px;
+    right: 30px;
+    position: relative;
+}
 
-        .nav-area {
-            width: 100%;
-            background-color: #7dd3f5; 
-            
-            /* 
-            linear-gradient(
-                180deg,
-                #25c5ed 0%,
-                #7de1f8 50%,
-            ); 
-            
-            */
+.nav-area {
+    width: 100%;
+    background-color: #7dd3f5; 
+    border-bottom: 4px solid #4cbbe6;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: hidden;
+}
 
-            border-bottom: 4px solid #4cbbe6;
-            padding: 20px 0;
-            display: flex;
-            justify-content: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            position: relative;
-            overflow: hidden;
-        }
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+    padding: 0 40px;
+    position: relative;
+}
 
-        .nav-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between; /* 👈 muda aqui */
-            gap: 30px; /* espaço entre logo e menu */
-            width: 100%;
-            padding: 0 40px;
-            position: relative;
-        }
+.nav-logo {
+    height: 80px;
+    margin-right: 0;
+    margin-top: -10px;
+}
 
-        .nav-logo {
-            height: 80px;
-            margin-right: 0;
-            margin-top: -10px;
-            
-        }
+.nav-logo img {
+    height: 120px;
+    width: auto;
+}
 
-        .nav-logo img {
-            height: 120px;
-            width: auto;
-        }
+/* MENU */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 
-        /* MENU */
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
+/* LINKS */
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 
-        /* LINKS */
-        .nav-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
+    background: #52c6f7;
+    padding: 10px 22px;
+    border-radius: 40px;
 
-            background: #52c6f7;
-            padding: 10px 22px;
-            border-radius: 40px;
+    text-decoration: none;
+    color: #004b80;
+    font-weight: bold;
+    font-size: 1.2em;
+    box-shadow: inset 0 0 6px rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition: .2s ease;
+}
 
-            text-decoration: none;
-            color: #004b80;
-            font-weight: bold;
-            font-size: 1.2em;
-            box-shadow: inset 0 0 6px rgba(255,255,255,0.4);
-            cursor: pointer;
-            transition: .2s ease;
-        }
+.nav-item img {
+    width: 40px;
+    height: 32px;
+}
 
-        .nav-item img {
-            width: 40px;
-            height: 32px;
-        }
+/* BOTÃO SAIR (IGUAL AOS OUTROS LINKS E SEM BORDA NATIVA) */
+button.nav-logout,
+.nav-logout {
+    background: #52c6f7 !important;
+    border: 0 !important;
+    border-style: none !important;
+    outline: none !important;
+    border-radius: 40px !important;
+    padding: 10px 22px !important;
+    box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.4) !important;
+    font-family: inherit !important;
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    color: #004b80 !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    transition: .2s ease !important;
+}
 
-        .nav-logout {
-            border: none;
-            font: inherit;
-            padding: 10px 22px;
-            cursor: pointer;
-        }
+button.nav-logout:focus,
+button.nav-logout:active,
+button.nav-logout:focus-visible,
+.nav-logout:focus,
+.nav-logout:active {
+    outline: none !important;
+    border: 0 !important;
+    box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.4) !important;
+}
 
-        /* ITEM ATIVO (JOGOS) — amarelo igual ao da foto */
-        .nav-item.active:hover {
-            background: linear-gradient(#ffe36a, #ffbe2f);
-            color: #804b00;
-            box-shadow: inset 0 0 10px rgba(255,255,255,0.7);
-        }
+button.nav-logout:hover,
+.nav-logout:hover {
+    background: linear-gradient(#ffe36a, #ffbe2f) !important;
+    color: #804b00 !important;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.7) !important;
+}
 
-/*NAO MEXA NAO MEXA NAO MEXA NAO MEXA NAO MEXA NAO MEXA NAO MEXA NAO MEXA NAO MEXA NAO MEXA NAO MEXA NAO MEXA NAO MEXA NAO MEXA NAO MEXA*/
-
-
-
+/* ITEM ATIVO (JOGOS) */
+.nav-item.active:hover {
+    background: linear-gradient(#ffe36a, #ffbe2f);
+    color: #804b00;
+    box-shadow: inset 0 0 10px rgba(255,255,255,0.7);
+}
 
 /* ===== MAIN CONTENT ===== */
 main {
@@ -171,12 +187,11 @@ footer {
 
 .btn2:hover {
     background: #ffcd50;
-    
 }
+
 /* ========================================
    BOTÃO VOLTAR - PADRÃO DO JOGO DA MEMÓRIA
    ======================================== */
-
 .voltar-container {
     display: flex;
     justify-content: center;
@@ -219,15 +234,14 @@ footer {
 .back-link:hover {
     background: #0d8ba8;
     color: #ffffff;
-
     transform: translateY(-3px) scale(1.05);
-
     box-shadow: 0 10px 22px rgba(13, 139, 168, 0.4);
 }
 
 .back-link:active {
     transform: scale(0.96);
 }
+
 .botoes-box .btn1,
 .botoes-box .btn2 {
     width: 300px;
@@ -258,24 +272,7 @@ footer {
     z-index: 1;
 }
 
-@media (max-width: 550px){
-    .nav-area {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        padding: 20px 0;
-    }   
-
-    .nav-container{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-        width: 100%;
-        padding: 0 40px;
-    }
-}
-
+/* ===== RESPONSIVIDADE ===== */
 @media (max-width: 900px) {
     .nav-container {
         gap: 20px;
@@ -360,6 +357,22 @@ footer {
 }
 
 @media (max-width: 550px) {
+    .nav-area {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+    }   
+
+    .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        width: 100%;
+        padding: 0 40px;
+    }
+
     .nav-logo img {
         height: 70px;
     }
