@@ -1,56 +1,207 @@
 {% extends "base.html" %}
+
 {% block title %}Jogo da Subtração - Divermatica{% endblock %}
 
 {% block content %}
+
 <div class="jogo-page">
-  <img src="{{ url_for('static', filename='images/icons/favo_de_baixo.png') }}" alt="favo" class="favobaixo">
-  <img src="{{ url_for('static', filename='images/icons/favo_de_cima.png') }}" alt="favo" class="favocima">
-  <img src="{{ url_for('static', filename='images/mascote_voando.png') }}" alt="Mascote Abelha" class="mascote_abelha">
 
-  <div class="jogo-area">
-    <section id="start-screen" class="overlay">
-      <h1>Borboleta da Subtração</h1>
-      <div class="regras">
-        <h3>Regras:</h3>
-        <p>1. Escolha a borboleta com a resposta correta.<br>2. Responda em 30s.<br>3. Para cada resposta CERTA, você ganha um ponto.<br>4. Para cada resposta ERRADA, você perde uma vida.</p>
-      </div>
-      <a href=""></a><button id="start-btn" class="big">▶ Começar</button>
-    </section>
+    <!-- =====================================================
+         ABELHA DA SUBTRAÇÃO
+         ===================================================== -->
+    <img
+        src="{{ url_for('static', filename='images/images-jogosubtracao/abelha_subtracao.png') }}"
+        alt="Mascote Abelha"
+        class="mascote_abelha"
+    >
 
-    <section id="game" class="game hidden">
-      <h1>Borboleta da Subtração</h1>
-      <div id="hud" class="hud hidden">
-        <div id="score">Pontuação: 0</div>
-        <div id="lives">Vidas: ❤️❤️❤️</div>
-        <div id="timer">Tempo: 10s</div>
-      </div>
 
-      <section id='con-jogo' class="container-jogo hidden">
-        <div class="question-box">
-          <div id="question" class="question"></div>
-        </div>
-        <div id="butterflies" class="butterflies"></div>
-      </section>
+    <!-- =====================================================
+         ÁREA PRINCIPAL DO JOGO
+         ===================================================== -->
+    <div class="jogo-area">
 
-      <div class="acoes-jogo">
-        <button onclick="sairJogo()" class="btn-sair">⬅ Sair</button>
-      </div>
-    </section>
 
-    <section id="game-over" class="game-over hidden">
-      <h2>💔 Suas vidas acabaram! Fim de Jogo.</h2>
-      <p id="final-score">⭐ Sua pontuação: 0</p>
-      <button id="restart-btn" class="big">▶ Jogar novamente</button>
-    </section>
-  </div>
+        <!-- =================================================
+             TELA INICIAL
+             ================================================= -->
+        <section id="start-screen" class="overlay">
+
+            <h1>Borboleta da Subtração</h1>
+
+
+            <div class="regras">
+
+                <h3>Regras:</h3>
+
+                <p>
+                    1. Escolha a borboleta com a resposta correta.<br>
+                    2. Responda em 30s.<br>
+                    3. Para cada resposta CERTA, você ganha um ponto.<br>
+                    4. Para cada resposta ERRADA, você perde uma vida.
+                </p>
+
+            </div>
+
+
+            <!-- BOTÃO COMEÇAR -->
+            <button
+                id="start-btn"
+                class="big"
+                type="button"
+            >
+                ▶ Começar
+            </button>
+
+        </section>
+
+
+        <!-- =================================================
+             JOGO
+             ================================================= -->
+        <section
+            id="game"
+            class="game hidden"
+        >
+
+            <h1>Borboleta da Subtração</h1>
+
+
+            <!-- HUD -->
+            <div
+                id="hud"
+                class="hud hidden"
+            >
+
+                <div id="score">
+                    Pontuação: 0
+                </div>
+
+                <div id="lives">
+                    Vidas: ❤️❤️❤️
+                </div>
+
+                <div id="timer">
+                    Tempo: 10s
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 ÁREA DA PERGUNTA
+                 ================================================= -->
+            <section
+                id="con-jogo"
+                class="container-jogo hidden"
+            >
+
+                <div class="question-box">
+
+                    <div
+                        id="question"
+                        class="question"
+                    ></div>
+
+                </div>
+
+
+                <!-- RESPOSTAS -->
+                <div
+                    id="butterflies"
+                    class="butterflies"
+                ></div>
+
+            </section>
+
+
+            <!-- =================================================
+                 BOTÃO SAIR
+                 ================================================= -->
+            <div class="acoes-jogo">
+
+                <button
+                    onclick="sairJogo()"
+                    class="btn-sair"
+                    type="button"
+                >
+                    ⬅ Sair
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             TELA DE GAME OVER
+             ================================================= -->
+        <section
+            id="game-over"
+            class="game-over hidden"
+        >
+
+            <h2>
+                💔 Suas vidas acabaram! Fim de Jogo.
+            </h2>
+
+
+            <p id="final-score">
+                ⭐ Sua pontuação: 0
+            </p>
+
+
+            <button
+                id="restart-btn"
+                class="big"
+                type="button"
+            >
+                ▶ Jogar novamente
+            </button>
+
+        </section>
+
+    </div>
+
+
+    <!-- =====================================================
+         BOTÃO VOLTAR
+         ===================================================== -->
+    <div class="voltar-container">
+
+        <a
+            href="{{ url_for('jogos_index') }}"
+            class="back-link"
+        >
+            ← Voltar
+        </a>
+
+    </div>
+
 </div>
 
-<div class="voltar-container">
-    <a href="{{ url_for('jogos_index') }}" class="back-link">← Voltar</a>
-</div>
 
-<link rel="stylesheet" href="{{ url_for('static', filename='css/jogo-subtracao.css') }}">
-<script src="{{ url_for('static', filename='js/dificuldade-por-ano.js') }}"></script>
-<script src="{{ url_for('static', filename='js/jogo-subtracao.js') }}"></script>
+<!-- =========================================================
+     CSS DA PÁGINA
+     ========================================================= -->
+
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/jogo-subtracao.css') }}"
+>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
+<script
+    src="{{ url_for('static', filename='js/dificuldade-por-ano.js') }}"
+></script>
+
+<script
+    src="{{ url_for('static', filename='js/jogo-subtracao.js') }}"
+></script>
+
 
 {% endblock %}
