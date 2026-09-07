@@ -1,22 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800;900&display=swap');
-/*corrigido*/
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Baloo 2', 'Arial Rounded MT Bold', Arial, sans-serif;
-    
 }
 
-
 body {
-    background: linear-gradient(
-        180deg,
-        #25c5ed 0%,
-        #7de1f8 50%,
-        #b7e3ec 100%
-    );
-    background-attachment: scroll, scroll;
+    background-image: 
+        url('../images/index/grama.png'),
+        linear-gradient(
+            180deg,
+            #25c5ed 0%,
+            #7de1f8 50%,
+            #b7e3ec 100%
+        );
+    background-repeat: no-repeat, no-repeat;
+    background-position: center bottom, center top;
+    background-size: 100% auto, 100% 100%;
     min-height: 100vh;
 }
 
@@ -63,7 +65,7 @@ body {
     font-weight: 900;
     font-size: clamp(48px, 8vw, 110px);
     font-family: 'Baloo 2', 'Arial Rounded MT Bold', Arial, sans-serif;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.18);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.18);
 }
 
 .text-line {
@@ -86,7 +88,6 @@ body {
     color: #FF4FA3;
     letter-spacing: -1px;
 }
-
 
 /* ===== BOTÃO JOGAR ===== */
 .jogar-link {
@@ -259,7 +260,7 @@ body {
 /* Grama e mascote maiores conforme a tela diminui */
 @media (max-width: 900px) {
     body {
-        background-size: 130% auto, auto;
+        background-size: 130% auto, 100% 100%;
     }
     .hero-mascote {
         width: min(280px, 35vw);
@@ -268,7 +269,7 @@ body {
 
 @media (max-width: 700px) {
     body {
-        background-size: 160% auto, auto;
+        background-size: 160% auto, 100% 100%;
     }
     .hero-mascote {
         width: min(240px, 38vw);
@@ -277,7 +278,7 @@ body {
 
 @media (max-width: 550px) {
     body {
-        background-size: 200% auto, auto;
+        background-size: 200% auto, 100% 100%;
     }
     .hero-mascote {
         position: fixed;
@@ -290,7 +291,7 @@ body {
 
 @media (max-width: 380px) {
     body {
-        background-size: 240% auto, auto;
+        background-size: 240% auto, 100% 100%;
     }
     .hero-mascote {
         width: 150px;
