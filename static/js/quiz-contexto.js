@@ -157,3 +157,7 @@ function sair() {
 
 // INICIAR
 gerarQuiz();
+
+document.getElementById("proxima").addEventListener("click", proximaQuestao);
+document.querySelector(".novo").addEventListener("click", novoQuiz);
+document.querySelector(".sair").addEventListener("click", sair);

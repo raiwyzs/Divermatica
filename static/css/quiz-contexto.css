@@ -7,10 +7,11 @@ body {
     padding: 0;
     width: 100%;
     min-height: 100%;
+    overflow: hidden;
 }
 
 body {
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 /* Header */
@@ -26,13 +27,13 @@ body {
     min-width: 100%;
     min-height: 100vh;
     height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow: hidden;
     font-family: 'Baloo 2', Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     isolation: isolate;
+    top: 0;
 }
 
 .quiz-background {
