@@ -30,8 +30,9 @@ html {
 
     width: 100%;
     min-height: 100%;
+    height: 100%;
 
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 
@@ -41,8 +42,9 @@ body {
 
     width: 100%;
     min-height: 100vh;
+    height: 100%;
 
-    overflow-x: hidden;
+    overflow: hidden;
 
     font-family: 'Baloo 2', Arial, sans-serif;
 }
