@@ -1,9 +1,11 @@
 /* ===== JOGO DA MEMÓRIA - DIVERMÁTICA ===== */
+html,
 body {
     width: 100%;
     min-height: 100vh;
     background: url('../images/images-jogomemoria/fundo_memoria.png') center center / cover no-repeat fixed;
     margin: 0;
+    overflow: hidden;
 }
 
 main {
@@ -21,6 +23,7 @@ main {
     background: transparent;
     border-radius: 36px;
     box-shadow: none;
+    top: -30px;
 }
 
 .jogo-area {
@@ -253,7 +256,7 @@ main {
 }
 
 .mascote-parabens {
-    width: 95px;
+    width: 170px;
     height: auto;
     margin-bottom: 12px;
     object-fit: contain;
