@@ -19,6 +19,15 @@ body {
     font-family: "Poppins", Arial, sans-serif;
 }
 
+.mascote-multiplicacao {
+    position: absolute;
+    bottom: 100px;
+    right: 50px;
+    width: 320px;
+    height: auto;
+    z-index: 1;
+}
+
 .container {
     position: relative;
 
@@ -46,12 +55,17 @@ body {
 
     color: #46B4FC;
 
-    font-family: cursive;
-    font-size: 38px;
-    font-weight: bold;
+     font-family: "Baloo 2", cursive;
+    font-size: 55px;
+    font-weight: 800;
 
     letter-spacing: 1px;
+
+     text-shadow:
+        2px 3px 0 rgba(0, 0, 0, 0.15);
 }
+
+
 
 
 /* =========================================
@@ -78,9 +92,9 @@ body {
 
     color: #46B4FC;
 
-    font-family: cursive;
-    font-size: 18px;
-    font-weight: bold;
+    font-family: "Baloo 2", cursive;
+    font-size: 25px;
+    font-weight: 800;
 }
 
 .hud span {
@@ -97,32 +111,6 @@ body {
 
 
 
-.btn-sair {
-    margin-left: auto;
-
-    padding: 9px 17px;
-
-    border: none;
-    border-radius: 15px;
-
-    background: #46B4FC;
-
-    color: white;
-
-    font-family: cursive;
-    font-size: 16px;
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: 0.2s ease;
-}
-
-.btn-sair:hover {
-    background: #df3157;
-
-    transform: translateY(-2px);
-}
 
 
 /* =========================================
@@ -205,8 +193,9 @@ body {
     justify-content: center;
 
     color: #14569c;
-    font-size: 20px;
-    font-weight: bold;
+    font-family: "Baloo 2", cursive;
+    font-size: 25px;
+    font-weight: 800;
 
     padding-top: 15px;
 
@@ -298,11 +287,9 @@ body {
 
     color: #46B4FC;
 
-    font-family: cursive;
-
-    font-size: 18px;
-
-    font-weight: bold;
+    font-family: "Baloo 2", cursive;
+    font-size: 20px;
+    font-weight: 800;
 
     transition: 0.2s ease;
 }
@@ -354,10 +341,9 @@ body {
 
     color: white;
 
-    font-family: cursive;
-
-    font-size: 18px;
-    font-weight: bold;
+    font-family: "Baloo 2", cursive;
+    font-size: 20px;
+    font-weight: 800;
 
     cursor: pointer;
 
@@ -447,9 +433,9 @@ body {
 
     color: #ed5870;
 
-    font-family: cursive;
-
-    font-size: 38px;
+    font-family: "Baloo 2", cursive;
+    font-size: 30px;
+    font-weight: 800;
 }
 
 
@@ -481,11 +467,9 @@ body {
 
     color: white;
 
-    font-family: cursive;
-
-    font-size: 17px;
-
-    font-weight: bold;
+    font-family: "Baloo 2", cursive;
+    font-size: 20px;
+    font-weight: 800;
 
     cursor: pointer;
 
@@ -535,11 +519,9 @@ body {
 
     text-decoration: none;
 
-    font-family: cursive;
-
-    font-size: 17px;
-
-    font-weight: bold;
+    font-family: "Baloo 2", cursive;
+    font-size: 20px;
+    font-weight: 800;
 
     box-shadow:
         0 5px 12px rgba(40, 140, 170, 0.18);

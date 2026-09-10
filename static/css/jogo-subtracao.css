@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800;900&display=swap');
 
-
 /* =========================================================
    VARIÁVEIS
    ========================================================= */
@@ -9,16 +8,11 @@
     --azul: #2196f3;
     --azul-claro: #5ed0ef;
     --azul-escuro: #0d8ba8;
-
     --amarelo: rgb(255, 245, 54);
-
     --branco: #ffffff;
-
     --texto: #2678b9;
-
     font-family: 'Baloo 2', Arial, sans-serif;
 }
-
 
 /* =========================================================
    RESET
@@ -27,43 +21,28 @@
 html {
     margin: 0 !important;
     padding: 0 !important;
-
     width: 100%;
     min-height: 100%;
-    height: 100%;
-
-    overflow: hidden;
+    overflow-x: hidden;
 }
-
 
 body {
     margin: 0 !important;
     padding: 0 !important;
-
     width: 100%;
     min-height: 100vh;
-    height: 100%;
-
-    overflow: hidden;
-
+    overflow-x: hidden;
     font-family: 'Baloo 2', Arial, sans-serif;
 }
 
-
-
 main {
     width: 100% !important;
-
     margin: 0 !important;
     padding: 0 !important;
-
     min-height: 100vh;
-
     text-align: center;
-
     box-sizing: border-box;
 }
-
 
 /* =========================================================
    ELEMENTOS ESCONDIDOS
@@ -73,260 +52,167 @@ main {
     display: none !important;
 }
 
-
-
 .jogo-page {
-
     position: relative;
-
     width: 100%;
     min-width: 100%;
-
     min-height: 100vh;
-
     height: auto;
-
     margin: 0;
     padding: 45px 20px 35px;
-
     box-sizing: border-box;
-
 
     /* =====================================================
        FUNDO DA PÁGINA
        ===================================================== */
 
     background-image: url("../images/images-jogosubtracao/fundo_subtracao.png");
-
     background-repeat: no-repeat;
-
     background-position: center center;
-
     background-size: cover;
-
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     justify-content: flex-start;
-
     overflow: hidden;
 }
-
 
 /* =========================================================
    CARTÃO PRINCIPAL
    ========================================================= */
 
 .jogo-area {
-
     position: relative;
-
     z-index: 2;
-
     width: min(920px, 88vw);
-
     min-height: 530px;
-
     margin: 0 auto;
-
     padding: 32px 45px 38px;
-
     box-sizing: border-box;
-
-
     background: rgba(255, 255, 255, 0.93);
-
     border-radius: 34px;
-
-
     box-shadow:
         0 15px 35px rgba(35, 125, 180, 0.18);
-
-
     text-align: center;
 }
-
 
 /* =========================================================
    TELA INICIAL
    ========================================================= */
 
 .overlay {
-
     width: 100%;
-
     min-height: 450px;
-
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     justify-content: flex-start;
-
     gap: 20px;
-
     box-sizing: border-box;
 }
-
 
 /* =========================================================
    TÍTULO
    ========================================================= */
 
 .jogo-area h1 {
-
     margin: 0 0 15px;
-
     padding: 0;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
     font-family: 'Baloo 2', Arial, sans-serif;
-
     font-size: clamp(40px, 4vw, 58px);
-
     line-height: 1.1;
-
     font-weight: 800;
-
     color: var(--azul-escuro);
-
     text-shadow: none;
 }
 
+.titulo-icone {
+    width: clamp(42px, 4vw, 56px);
+    height: auto;
+    display: inline-block;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15));
+}
 
 /* =========================================================
    REGRAS
    ========================================================= */
 
 .regras {
-
     width: min(760px, 92%);
-
     padding: 28px 35px;
-
     box-sizing: border-box;
-
-
     border: 4px solid var(--azul-claro);
-
     border-radius: 25px;
-
-
     background: rgba(235, 249, 255, 0.88);
-
-
     color: var(--texto);
-
     text-align: center;
 }
 
-
 .regras h3 {
-
     margin: 0 0 18px;
-
     padding: 0;
-
     font-size: clamp(30px, 3vw, 42px);
-
     line-height: 1;
-
     font-weight: 800;
-
     color: #2196df;
 }
 
-
 .regras p {
-
     margin: 0;
-
     padding: 0;
-
     font-size: clamp(18px, 1.8vw, 24px);
-
     line-height: 1.8;
-
     font-weight: 700;
-
     color: var(--texto);
 }
-
 
 /* =========================================================
    ABELHA DA SUBTRAÇÃO
    ========================================================= */
 
 .mascote_abelha {
-
     position: absolute;
-
     right: max(
         20px,
         calc(50% - 900px)
     );
-
     top: 40px;
-
     width: clamp(400px, 50vw, 530px);
-
     height: auto;
-
     z-index: 5;
-
     pointer-events: none;
 }
-
 
 /* =========================================================
    BOTÃO COMEÇAR
    ========================================================= */
 
-#start-btn {
-
+#start-btn, #restart-btn {
     min-width: 270px;
-
     min-height: 72px;
-
     margin-top: 5px;
-
     padding: 10px 38px;
-
     box-sizing: border-box;
-
-
     border: none;
-
     border-radius: 40px;
-
-
     background: linear-gradient(
         180deg,
         #22c9ef 0%,
         #1598e8 100%
     );
-
-
     color: #ffffff;
-
     font-family: 'Baloo 2', Arial, sans-serif;
-
     font-size: 28px;
-
     font-weight: 800;
-
-
     cursor: pointer;
-
 
     box-shadow:
         0 7px 0 #0b7fc5,
         0 12px 22px rgba(30, 140, 210, 0.25);
-
 
     transition:
         transform 0.2s ease,
@@ -335,9 +221,7 @@ main {
 
 
 #start-btn:hover {
-
     transform: translateY(-3px);
-
     box-shadow:
         0 10px 0 #0b7fc5,
         0 16px 25px rgba(30, 140, 210, 0.3);
@@ -345,156 +229,207 @@ main {
 
 
 #start-btn:active {
-
     transform: translateY(3px);
-
     box-shadow:
         0 4px 0 #0b7fc5,
         0 7px 12px rgba(30, 140, 210, 0.2);
 }
 
-
 /* =========================================================
-   HUD
+   HUD (BADGES ESTILO "PÍLULA")
    ========================================================= */
 
 .hud {
-
     display: flex;
-
     align-items: center;
-
-    justify-content: space-between;
-
-    width: 90%;
-
-    margin: 0 auto 20px;
-
-    font-size: 18px;
-
-    font-weight: 700;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 100%;
+    margin: 0 auto 22px;
 }
 
+.hud-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    box-sizing: border-box;
+    border-radius: 50px;
+    font-size: 17px;
+    font-weight: 800;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(33, 150, 243, 0.15);
+}
+
+.hud-score {
+    background: rgba(232, 250, 233, 0.95);
+    border: 2px solid #8bd68f;
+    color: #2e8b3d;
+}
+
+.hud-lives {
+    background: rgba(255, 235, 238, 0.95);
+    border: 2px solid #ffb3c1;
+    color: #d6336c;
+}
+
+.hud-timer {
+    background: rgba(255, 248, 225, 0.95);
+    border: 2px solid #ffd54f;
+    color: #b26a00;
+}
 
 /* =========================================================
    JOGO
    ========================================================= */
 
 .game {
-
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     justify-content: center;
-
     width: 100%;
-
     min-height: 400px;
 }
-
 
 /* =========================================================
    ÁREA DA QUESTÃO
    ========================================================= */
 
 .container-jogo {
-
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     justify-content: center;
-
     width: 90%;
-
     min-height: 200px;
-
-    padding: 25px;
-
+    gap: 22px;
     box-sizing: border-box;
-
-
-    border: 3px solid var(--azul-claro);
-
-    border-radius: 22px;
-
-
-    background: rgba(
-        235,
-        249,
-        255,
-        0.82
-    );
 }
 
+/* =========================================================
+   CAIXA DA PERGUNTA
+   ========================================================= */
+
+.question-box {
+    width: 100%;
+    padding: 22px 30px;
+    box-sizing: border-box;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow:
+        0 10px 22px rgba(33, 150, 243, 0.15);
+}
 
 /* =========================================================
    QUESTÃO
    ========================================================= */
 
 .question {
-
-    font-size: 30px;
-
+    font-size: 34px;
     font-weight: 800;
-
     color: #2678b9;
 }
 
-
 /* =========================================================
-   BORBOLETAS
+   CENA DAS BORBOLETAS (CÉU + GRAMA)
    ========================================================= */
 
 .butterflies {
-
+    position: relative;
     display: flex;
-
-    align-items: center;
-
+    align-items: flex-end;
     justify-content: center;
-
     flex-wrap: wrap;
+    gap: 45px;
+    width: 100%;
+    min-height: 260px;
+    padding: 40px 25px 30px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 26px;
 
-    gap: 40px;
+    background: linear-gradient(
+        to bottom,
+        #bdeaff 0%,
+        #bdeaff 62%,
+        #9fd873 62%,
+        #7fbf4a 100%
+    );
 
-    margin-top: 25px;
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.4);
 }
 
+/* nuvens decorativas, feitas só com CSS (sem imagem extra) */
+
+.butterflies::before,
+.butterflies::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 22px;
+    width: 60px;
+    height: 26px;
+    background: #ffffff;
+    border-radius: 50px;
+    opacity: 0.9;
+}
+
+.butterflies::before {
+    left: 8%;
+    box-shadow:
+        22px 6px 0 -3px #ffffff,
+        42px 0 0 -6px #ffffff;
+}
+
+.butterflies::after {
+    right: 10%;
+    box-shadow:
+        20px 5px 0 -4px #ffffff;
+}
+
+/* =========================================================
+   BORBOLETA (IMAGEM + RESPOSTA)
+   ========================================================= */
 
 .butterfly {
-
-    font-size: 60px;
-
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
     text-align: center;
-
     cursor: pointer;
-
     transition:
         transform 0.2s ease;
 }
 
-
 .butterfly:hover {
-
-    transform: scale(1.2);
+    transform: translateY(-8px) scale(1.12);
 }
 
+.butterfly-img {
+    width: clamp(85px, 9vw, 120px);
+    height: auto;
+    display: block;
+    pointer-events: none;
+    filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.18));
+}
 
 .butterfly span {
-
-    display: block;
-
-    font-size: 20px;
-
+    display: inline-block;
+    padding: 6px 22px;
+    border-radius: 30px;
+    background: #ffffff;
+    font-size: 22px;
     font-weight: 800;
+    color: var(--texto);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
 }
-
 
 /* =========================================================
    ANIMAÇÃO CORRETA
@@ -503,7 +438,6 @@ main {
 @keyframes voarBorboleta {
 
     0% {
-
         transform:
             translateY(0)
             scale(1);
@@ -512,7 +446,6 @@ main {
     }
 
     50% {
-
         transform:
             translateY(-45px)
             scale(1.3);
@@ -521,7 +454,6 @@ main {
     }
 
     100% {
-
         transform:
             translateY(-90px)
             scale(0.9);
@@ -532,7 +464,6 @@ main {
 
 
 .butterfly.fly-away {
-
     animation:
         voarBorboleta
         1.5s
@@ -542,13 +473,11 @@ main {
     pointer-events: none;
 }
 
-
 /* =========================================================
    ANIMAÇÃO ERRO
    ========================================================= */
 
 @keyframes erroBorboleta {
-
     0% {
         transform: translateX(0);
     }
@@ -574,9 +503,7 @@ main {
     }
 }
 
-
 .butterfly.wrong-answer {
-
     animation:
         erroBorboleta
         1.5s
@@ -585,387 +512,262 @@ main {
     pointer-events: none;
 }
 
-
 .butterfly.correct-answer {
-
     transform: scale(1.08);
-
     transition: 0.3s;
 }
-
 
 /* =========================================================
    AÇÕES
    ========================================================= */
 
 .acoes-jogo {
-
     width: 90%;
-
     display: flex;
-
     justify-content: flex-end;
-
     margin-top: 15px;
 }
 
-
 .btn-sair {
-
     padding: 10px 20px;
-
     border: none;
-
     border-radius: 25px;
-
     background: #ef5350;
-
     color: #ffffff;
-
     font-family: 'Baloo 2', Arial, sans-serif;
-
     font-size: 17px;
-
     font-weight: 700;
-
     cursor: pointer;
 }
-
 
 /* =========================================================
    GAME OVER
    ========================================================= */
 
 .game-over {
-
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
-
     align-items: center;
-
     width: 100%;
-
     min-height: 400px;
-
     gap: 20px;
-
     text-align: center;
 }
 
-
 .game-over h2 {
-
-    margin: 0;
-
-    font-size: 30px;
-
-    color: #e64a4a;
+    margin: 0 0 15px;
+    font-family: 'Baloo 2', Arial, sans-serif;
+    font-size: clamp(32px, 3.5vw, 46px);
+    font-weight: 800;
+    color: var(--azul-escuro);
 }
-
 
 .game-over p {
-
     margin: 0;
-
     font-size: 22px;
 }
-
 
 /* =========================================================
    BOTÕES
    ========================================================= */
 
 button {
-
     font-family: 'Baloo 2', Arial, sans-serif;
 }
-
 
 /* =========================================================
    BOTÃO VOLTAR
    ========================================================= */
 
 .voltar-container {
-
     position: relative;
-
     z-index: 10;
-
     width: 100%;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     margin-top: 25px;
-
     margin-bottom: 0;
 }
 
-
 .back-link {
-
     display: inline-flex;
-
     align-items: center;
-
     justify-content: center;
-
     gap: 8px;
-
-
     min-width: 160px;
-
     padding: 10px 30px;
-
     box-sizing: border-box;
-
-
-    background: #ffffff;
-
-    color: var(--azul-escuro);
-
-
+    background: linear-gradient(
+        180deg,
+        #ffd54f 0%,
+        #ffb300 100%
+    );
+    color: #7a4a00;
     text-decoration: none;
-
-
     font-family:
         'Baloo 2',
         'Arial Rounded MT Bold',
         Arial,
         sans-serif;
-
     font-size: 1.15rem;
-
     font-weight: 800;
-
-
     border-radius: 50px;
-
-    border: 3px solid var(--azul-escuro);
-
-
+    border: none;
     box-shadow:
-        0 6px 15px rgba(
-            0,
-            0,
-            0,
-            0.15
-        );
-
-
+        0 6px 0 #e08e00,
+        0 10px 18px rgba(0, 0, 0, 0.15);
     transition:
         transform 0.2s ease,
         background 0.2s ease,
         color 0.2s ease;
 }
 
-
 .back-link:hover {
-
-    background: var(--azul-escuro);
-
-    color: #ffffff;
-
+    background: linear-gradient(
+        180deg,
+        #ffca28 0%,
+        #ff9f00 100%
+    );
+    color: #5c3800;
     transform: translateY(-3px);
 }
-
 
 /* =========================================================
    RESPONSIVIDADE
    ========================================================= */
 
 @media (max-width: 1100px) {
-
     .jogo-page {
-
         padding-left: 15px;
         padding-right: 15px;
     }
 
-
     .jogo-area {
-
         width: min(
             900px,
             90vw
         );
     }
 
-
     .mascote_abelha {
-
         right: 20px;
-
         width: 250px;
     }
 }
-
 
 /* =========================================================
    TABLET
    ========================================================= */
 
 @media (max-width: 850px) {
-
     .jogo-page {
-
         padding:
             30px
             15px
             30px;
     }
 
-
     .jogo-area {
-
         width: 94vw;
-
         min-height: auto;
-
         padding:
             30px
             20px
             35px;
     }
 
-
     .overlay {
-
         min-height: auto;
     }
 
-
     .mascote_abelha {
-
         position: relative;
-
         top: auto;
-
         right: auto;
-
         width: 210px;
-
         margin-top: 10px;
-
         order: 3;
     }
 
-
     .regras {
-
         width: 95%;
-
         padding:
             22px
             18px;
     }
 
-
     .regras p {
-
         line-height: 1.6;
     }
 }
-
 
 /* =========================================================
    CELULAR
    ========================================================= */
 
 @media (max-width: 600px) {
-
     .jogo-page {
-
         padding:
             20px
             10px
             25px;
     }
 
-
     .jogo-area {
-
         width: 96vw;
-
         border-radius: 25px;
-
         padding:
             25px
             15px
             30px;
     }
 
-
     .jogo-area h1 {
-
         font-size: 34px;
     }
 
-
     .regras {
-
         width: 100%;
-
         border-width: 3px;
-
         padding:
             18px
             12px;
     }
 
-
     .regras h3 {
-
         font-size: 30px;
     }
 
-
     .regras p {
-
         font-size: 17px;
-
         line-height: 1.5;
     }
 
-
     #start-btn {
-
         min-width: 220px;
-
         min-height: 60px;
-
         font-size: 23px;
     }
 
+    .hud-badge {
+        font-size: 15px;
+        padding: 8px 16px;
+    }
 
     .butterflies {
-
-        gap: 20px;
+        gap: 22px;
+        padding: 30px 15px 22px;
     }
-
-
-    .butterfly {
-
-        font-size: 45px;
-    }
-
 
     .butterfly span {
-
-        font-size: 16px;
+        font-size: 18px;
+        padding: 5px 16px;
     }
 
-
     .back-link {
-
         min-width: 145px;
-
         padding:
             9px
             24px;
@@ -974,35 +776,25 @@ button {
     }
 }
 
-
 /* =========================================================
    CELULAR PEQUENO
    ========================================================= */
 
 @media (max-width: 400px) {
-
     .jogo-area h1 {
-
         font-size: 29px;
     }
 
-
     .regras p {
-
         font-size: 15px;
     }
 
-
     #start-btn {
-
         min-width: 200px;
-
         font-size: 21px;
     }
 
-
     .mascote_abelha {
-
         width: 180px;
     }
 }
