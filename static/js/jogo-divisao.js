@@ -1,14 +1,9 @@
-// ===== Configuração de dificuldade =====
-// Se você já tem o arquivo dificuldade-por-ano.js real, remova este bloco
-// e inclua o script dele antes deste arquivo no HTML.
 window.dificuldadePorAno = window.dificuldadePorAno || {
   obterConfiguracao(materia){
     return { maxQuociente: 10, maxDivisor: 10 };
   }
 };
 
-// ===== IMAGENS DOS PEIXES =====
-// Troque os caminhos abaixo pelos arquivos reais das suas imagens de peixe.
 const FISH_IMAGES = [
   "/static/images/images-jogodivisao/peixe_roxo.png",
   "/static/images/images-jogodivisao/peixe_amarelo.png",
@@ -28,7 +23,7 @@ function randomFishImage(){
   const gameEl = document.getElementById('game');
   const gameOverEl = document.getElementById('game-over');
   const questionEl = document.getElementById('question');
-  const ducksEl = document.getElementById('ducks');
+  const fishAreaEl = document.getElementById('fish-area');
   const scoreEl = document.getElementById('score');
   const livesEl = document.getElementById('lives');
   const timerEl = document.getElementById('timer');
@@ -146,21 +141,21 @@ function randomFishImage(){
     questionEl.textContent = `${dividend} ÷ ${divisor} = ?`;
 
     const opts = pickOptions(quotient);
-    ducksEl.innerHTML = '';
+    fishAreaEl.innerHTML = '';
 
     opts.forEach(num => {
       const btn = document.createElement('button');
-      btn.className = 'duck';
+      btn.className = 'fish';
       btn.dataset.value = num;
       btn.innerHTML = `
         <img class="fish-img" src="${randomFishImage()}" alt="peixe">
         <div class="num">${num}</div>
       `;
-      btn.addEventListener('click', onDuckClick);
+      btn.addEventListener('click', onFishClick);
       btn.style.top = Math.random()*240 + 40 + "px";
-      btn.style.left = Math.random()*(ducksEl.clientWidth ? ducksEl.clientWidth - 130 : 500) + 10 + "px";
+      btn.style.left = Math.random()*(fishAreaEl.clientWidth ? fishAreaEl.clientWidth - 130 : 500) + 10 + "px";
 
-      ducksEl.appendChild(btn);
+      fishAreaEl.appendChild(btn);
     });
 
     timerId = setInterval(() => {
@@ -173,7 +168,7 @@ function randomFishImage(){
     }, 1000);
   }
 
-  function onDuckClick(e) {
+  function onFishClick(e) {
     const val = Number(e.currentTarget.dataset.value);
     if (val === correctAnswer) {
       handleCorrect(e.currentTarget);
@@ -291,12 +286,12 @@ function randomFishImage(){
     updateHUD();
 
     if (timeout) {
-      document.querySelectorAll('.duck').forEach(d => d.classList.add('wrong'));
+      document.querySelectorAll('.fish').forEach(d => d.classList.add('wrong'));
     } else if (btn) {
       btn.classList.add('wrong');
     }
 
-    document.querySelectorAll('.duck').forEach(d => {
+    document.querySelectorAll('.fish').forEach(d => {
       if (Number(d.dataset.value) === correctAnswer) d.classList.add('correct');
       d.replaceWith(d.cloneNode(true));
     });

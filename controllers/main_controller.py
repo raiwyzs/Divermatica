@@ -12,12 +12,7 @@ def init_app(app):
         return render_template('sobre.html')
     app.add_url_rule('/sobre', endpoint='sobre', view_func=sobre, methods=['GET'])
 
-    def quiz():
-        return render_template('quiz.html')
-    app.add_url_rule('/quiz', endpoint='quiz', view_func=quiz, methods=['GET'])
-
-
-    # Jogos list (placeholder)
+    # Jogos list
     
     def jogos_index():
         return render_template('jogos.html')
@@ -43,7 +38,6 @@ def init_app(app):
         return render_template('jogo-subtracao.html')
     app.add_url_rule('/jogo-subtracao', endpoint='jogo_subtracao', view_func=jogo_subtracao, methods=['GET'])
     
-
     def quiz_contas():
         return render_template('quiz-contas.html')
     app.add_url_rule('/quiz-contas', endpoint='quiz_contas', view_func=quiz_contas, methods=['GET'])
@@ -52,3 +46,6 @@ def init_app(app):
         return render_template('quiz-contexto.html')
     app.add_url_rule('/quiz-contexto', endpoint='quiz_contexto', view_func=quiz_contexto, methods=['GET'])
 
+    def quiz():
+        return render_template('quiz.html')
+    app.add_url_rule('/quiz', endpoint='quiz', view_func=quiz, methods=['GET'])

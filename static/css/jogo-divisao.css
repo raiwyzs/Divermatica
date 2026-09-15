@@ -224,10 +224,10 @@ body {
   z-index: 1;
 }
 
-/* peixe (duck) =====
-   O peixe agora é uma <img class="fish-img"> dentro do botão .duck.
+/* peixe (fish) =====
+   O peixe agora é uma <img class="fish-img"> dentro do botão .fish.
    O src da imagem é definido em jogo-divisao.js (array FISH_IMAGES). */
-.duck{
+.fish{
   position: absolute;
   background: transparent;
   border: none;
@@ -240,12 +240,12 @@ body {
   z-index: 3;
 }
 
-.duck:hover{
+.fish:hover{
   transform: scale(1.08) translateY(-2px);
   filter: brightness(1.05);
 }
 
-.duck .fish-img{
+.fish .fish-img{
   width: 100px;
   height: auto;
   display: block;
@@ -253,7 +253,7 @@ body {
   filter: drop-shadow(0 6px 10px rgba(0,20,50,0.25));
 }
 
-.duck .num{
+.fish .num{
   margin-top: -10px;
   background: #ffffff;
   color: #33306e;
@@ -272,23 +272,23 @@ body {
 }
 
 /* feedback */
-.duck.correct .num{
+.fish.correct .num{
   background: #e9ffe9;
   color: #2f8f3e;
   border: 2px solid #4CAF50;
   animation: correctPop 0.35s ease;
 }
-.duck.correct .fish-img{
+.fish.correct .fish-img{
   filter: drop-shadow(0 0 10px rgba(76,175,80,0.65));
 }
 
-.duck.wrong .num{
+.fish.wrong .num{
   background: #ffe8e8;
   color: #c23b3b;
   border: 2px solid #e63946;
   animation: shake 0.4s ease;
 }
-.duck.wrong .fish-img{
+.fish.wrong .fish-img{
   opacity: 0.55;
 }
 
