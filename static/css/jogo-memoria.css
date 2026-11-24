@@ -1,17 +1,23 @@
 /* ===== JOGO DA MEMÓRIA - DIVERMÁTICA ===== */
-html,
+html {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 body {
     width: 100%;
-    min-height: 100vh;
+    min-height: 100%;
     background: url('../images/images-jogomemoria/fundo_memoria.png') center center / cover no-repeat fixed;
     margin: 0;
-    overflow: hidden;
+    overflow: visible;
 }
 
 main {
     display: flex;
     justify-content: center;
-    padding: 20px 0 40px;
+    padding: 15px 0 30px;
     background: transparent;
 }
 
@@ -19,11 +25,11 @@ main {
     position: relative;
     width: min(95%, 1080px);
     margin: 0 auto;
-    padding: 35px 20px 40px;
+    padding: 12px 20px 20px;
     background: transparent;
     border-radius: 36px;
     box-shadow: none;
-    top: -30px;
+    top: 0;
 }
 
 .jogo-area {
@@ -31,18 +37,18 @@ main {
     max-width: 760px;
     position: relative;
     background: rgba(255, 255, 255, 0.15);
-    padding: 20px 14px 18px;
+    padding: 18px 18px 20px;
     border-radius: 26px;
     box-shadow: 0 18px 35px rgba(78, 47, 132, 0.03);
-    width: min(66%, 500px);
+    width: min(92%, 530px);
     text-align: center;
     z-index: 2;
 }
 
 .titulo-jogo {
     color: #ab25db;
-    font-size: clamp(1.65rem, 2.4vw, 2.15rem);
-    margin-bottom: 18px;
+    font-size: clamp(1.55rem, 2.3vw, 2rem);
+    margin: 0 0 6px 0;
     text-transform: capitalize;
     letter-spacing: 0.04em;
     text-shadow: 0 2px 12px rgba(180, 80, 242, 0.16);
@@ -51,8 +57,8 @@ main {
 
 .subtitulo-jogo {
     color: #71129d;
-    font-size: 1.15rem;
-    margin-bottom: 24px;
+    font-size: 1.1rem;
+    margin: 0 0 16px 0;
     text-shadow: none;
     font-family: 'Baloo 2', 'Arial Rounded MT Bold', Arial, sans-serif;
 }
@@ -65,14 +71,14 @@ main {
 
 .wrapper {
     background: rgba(255, 255, 255, 0.78);
-    padding: 20px;
-    border-radius: 20px;
+    padding: 18px;
+    border-radius: 22px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 500px;
-    height: 500px;
+    width: 485px;
+    height: 485px;
     box-sizing: border-box;
     margin: 0 auto;
 }
@@ -105,13 +111,12 @@ main {
 }
 
 .cards .card:hover {
-    transform: translateY(-3px) scale(1.02);
+    transform: translateY(-3px) scale(1.03);
 }
 
 .cards .card:active {
     transform: scale(0.96);
 }
-
 
 .card.shake {
     animation: shake 0.35s ease-in-out;
@@ -130,7 +135,7 @@ main {
     width: 100%;
     height: 100%;
     position: absolute;
-    border-radius: 12px;
+    border-radius: 14px;
     background: #ffffff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
     display: flex;
@@ -144,19 +149,18 @@ main {
 }
 
 .card .front-view img {
-    width: 90%;
-    height: 90%;
-    max-width: 95px;
-    max-height: 95px;
+    width: 92%;
+    height: 92%;
+    max-width: 105px;
+    max-height: 105px;
     object-fit: contain;
 }
 
-
 .card .back-view img {
-    width: 85%;
-    height: 85%;
-    max-width: 85px;
-    max-height: 85px;
+    width: 88%;
+    height: 88%;
+    max-width: 95px;
+    max-height: 95px;
     object-fit: contain;
 }
 
@@ -178,7 +182,8 @@ main {
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-bottom: 30px;
+    margin-top: 18px;
+    margin-bottom: 18px;
 }
 
 .back-link {
@@ -190,9 +195,9 @@ main {
     color: #0d8ba8;
     text-decoration: none;
     font-family: 'Baloo 2', 'Arial Rounded MT Bold', Arial, sans-serif;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: 800;
-    padding: 10px 30px;
+    padding: 9px 30px;
     border-radius: 50px;
     border: 3px solid #0d8ba8;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
@@ -307,21 +312,19 @@ main {
 .mascote_abelha {
     position: absolute;
     top: 50%;
-    right: -200px; 
+    right: -195px; 
     transform: translateY(-50%);
-    width: 600px;  
+    width: 590px;  
     height: auto;
     z-index: 1;    
     pointer-events: none;
     display: block;
-    
 }
 
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 1050px) {
-    /* Esconde ou diminui a abelha caso a tela não tenha espaço nas laterais */
     .mascote_abelha {
-        opacity: 0.25; /* se sobrepor em telas intermediárias, fica bem sutil */
+        opacity: 0.25;
         right: -20px;
     }
 }

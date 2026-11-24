@@ -577,7 +577,7 @@ button {
 }
 
 /* =========================================================
-   BOTÃO VOLTAR
+   BOTÃO VOLTAR (IGUAL AO DO JOGO DA MEMÓRIA)
    ========================================================= */
 
 .voltar-container {
@@ -596,42 +596,29 @@ button {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    min-width: 160px;
-    padding: 10px 30px;
-    box-sizing: border-box;
-    background: linear-gradient(
-        180deg,
-        #ffd54f 0%,
-        #ffb300 100%
-    );
-    color: #7a4a00;
+    background: #ffffff;
+    color: #0d8ba8;
     text-decoration: none;
-    font-family:
-        'Baloo 2',
-        'Arial Rounded MT Bold',
-        Arial,
-        sans-serif;
-    font-size: 1.15rem;
+    font-family: 'Baloo 2', 'Arial Rounded MT Bold', Arial, sans-serif;
+    font-size: 1.1rem;
     font-weight: 800;
+    padding: 9px 30px;
     border-radius: 50px;
-    border: none;
-    box-shadow:
-        0 6px 0 #e08e00,
-        0 10px 18px rgba(0, 0, 0, 0.15);
-    transition:
-        transform 0.2s ease,
-        background 0.2s ease,
-        color 0.2s ease;
+    border: 3px solid #0d8ba8;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    z-index: 10;
 }
 
 .back-link:hover {
-    background: linear-gradient(
-        180deg,
-        #ffca28 0%,
-        #ff9f00 100%
-    );
-    color: #5c3800;
-    transform: translateY(-3px);
+    background: #0d8ba8;
+    color: #ffffff;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 22px rgba(13, 139, 168, 0.4);
+}
+
+.back-link:active {
+    transform: scale(0.96);
 }
 
 /* =========================================================
@@ -767,12 +754,9 @@ button {
     }
 
     .back-link {
-        min-width: 145px;
-        padding:
-            9px
-            24px;
-
+        padding: 8px 22px;
         font-size: 1rem;
+        border-width: 2px;
     }
 }
 
